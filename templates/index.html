@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Утром / Вечером мем</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        input { display: block; margin: 5px 0; width: 100%; padding: 8px; }
+        button { margin-top: 15px; padding: 10px 20px; cursor: pointer; }
+        h2 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Создай расписание на день :)</h1>
+
+    <form action="/generate" method="post">
+        <h2>УТРОМ</h2>
+        {% for i in range(4) %}
+            <input type="text" name="morning" placeholder="Дело №{{ i+1 }}">
+        {% endfor %}
+
+        <h2>ВЕЧЕРОМ</h2>
+        {% for i in range(5) %}
+            <input type="text" name="evening" placeholder="Дело №{{ i+1 }}">
+        {% endfor %}
+
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>
